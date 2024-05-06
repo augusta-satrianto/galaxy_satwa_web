@@ -22,7 +22,7 @@ class PetSeeder extends Seeder
             'gender' => 'Betina',
             'color' => 'Putih',
             'tatto' => '-',
-            'image' => 'http://192.168.194.214:8000/storage/pet/default.png'
+            'image' => 'http://10.60.2.146:8000/storage/pet/default.png'
         ]);
 
         Pet::create([
@@ -34,7 +34,7 @@ class PetSeeder extends Seeder
             'gender' => 'Jantan',
             'color' => 'Putih',
             'tatto' => '-',
-            'image' => 'http://192.168.194.214:8000/storage/pet/default.png'
+            'image' => 'http://10.60.2.146:8000/storage/pet/default.png'
         ]);
 
         Pet::create([
@@ -46,7 +46,7 @@ class PetSeeder extends Seeder
             'gender' => 'Betina',
             'color' => 'Putih',
             'tatto' => '-',
-            'image' => 'http://192.168.194.214:8000/storage/pet/default.png'
+            'image' => 'http://10.60.2.146:8000/storage/pet/default.png'
         ]);
 
         Pet::create([
@@ -58,7 +58,7 @@ class PetSeeder extends Seeder
             'gender' => 'Jantan',
             'color' => 'Putih',
             'tatto' => '-',
-            'image' => 'http://192.168.194.214:8000/storage/pet/default.png'
+            'image' => 'http://10.60.2.146:8000/storage/pet/default.png'
         ]);
 
         Pet::create([
@@ -70,7 +70,7 @@ class PetSeeder extends Seeder
             'gender' => 'Betina',
             'color' => 'Putih',
             'tatto' => '-',
-            'image' => 'http://192.168.194.214:8000/storage/pet/default.png'
+            'image' => 'http://10.60.2.146:8000/storage/pet/default.png'
         ]);
 
         Pet::create([
@@ -82,7 +82,7 @@ class PetSeeder extends Seeder
             'gender' => 'Jantan',
             'color' => 'Putih',
             'tatto' => '-',
-            'image' => 'http://192.168.194.214:8000/storage/pet/default.png'
+            'image' => 'http://10.60.2.146:8000/storage/pet/default.png'
         ]);
     }
 }

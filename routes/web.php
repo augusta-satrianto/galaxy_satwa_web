@@ -24,7 +24,6 @@ use App\Http\Controllers\CorrespondenceController;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index']);
 Route::get('/verifikasiberhasil', [DashboardController::class, 'verifikasi']);
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
