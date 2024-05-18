@@ -11,7 +11,7 @@
                             <div class="card" style="margin: 0;padding:0;">
                                 <div class="profile-left active-visitor">
                                     <div class="profile-thumb">
-                                        <img src="../../images/all-img/users/user1.png" alt="" />
+                                        <img src="../../images/img_total_hewan.svg" alt="" />
                                     </div>
                                     <div class="profile-data">
                                         <h4>{{ $pets_count }}</h4>
@@ -24,7 +24,7 @@
                             <div class="card" style="margin: 0;padding:0;">
                                 <div class="profile-left active-visitor">
                                     <div class="profile-thumb">
-                                        <img src="../../images/all-img/users/user1.png" alt="" />
+                                        <img src="../../images/img_pemeriksaan.svg" alt="" />
                                     </div>
                                     <div class="profile-data">
                                         <h4>{{ $records_count }}</h4>
@@ -37,7 +37,7 @@
                             <div class="card" style="margin: 0;padding:0;">
                                 <div class="profile-left active-visitor">
                                     <div class="profile-thumb">
-                                        <img src="../../images/all-img/users/user1.png" alt="" />
+                                        <img src="../../images/img_dokter_pegawai.svg" alt="" />
                                     </div>
                                     <div class="profile-data">
                                         <h4>{{ $employees_count }}</h4>

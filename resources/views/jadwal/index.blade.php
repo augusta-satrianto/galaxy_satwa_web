@@ -105,10 +105,14 @@
                 <div class="Panel" style="width: 400px;">
                     <nav>
                         <ul class="Tabs">
-                            <li class="Tabs__tab active Tab"><a href="#" onclick="showContent(0)">Hari Ini</a></li>
-                            <li class="Tabs__tab Tab"><a href="#" onclick="showContent(1)">Mendatang</a></li>
-                            <li class="Tabs__tab Tab"><a href="#" onclick="showContent(2)">Selesai</a></li>
-                            <li class="Tabs__tab Tab"><a href="#" onclick="showContent(3)">Dibatalkan</a></li>
+                            <li class="Tabs__tab active Tab"><a href="#" onclick="showContent(0)"
+                                    style="font-family: 'Public Sans', sans-serif;">Hari Ini</a></li>
+                            <li class="Tabs__tab Tab"><a href="#" onclick="showContent(1)"
+                                    style="font-family: 'Public Sans', sans-serif;">Mendatang</a></li>
+                            <li class="Tabs__tab Tab"><a href="#" onclick="showContent(2)"
+                                    style="font-family: 'Public Sans', sans-serif;">Selesai</a></li>
+                            <li class="Tabs__tab Tab"><a href="#" onclick="showContent(3)"
+                                    style="font-family: 'Public Sans', sans-serif;">Dibatalkan</a></li>
                             <li class="Tabs__presentation-slider" role="presentation"></li>
                         </ul>
                     </nav>

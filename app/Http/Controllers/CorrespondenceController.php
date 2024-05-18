@@ -66,16 +66,109 @@ class CorrespondenceController extends Controller
 
     public function formpersetujuantindakan()
     {
-        return view('persuratan.formpersetujuantindakan', []);
+        return view('persuratan.persetujuantindakan.form', []);
     }
 
     public function docpersetujuantindakan(Request $request)
     {
-        // return view('persuratan.coba', [
-        //     "data" =>  $request,
-        // ]);
-        $data = ['data' => $request];
-        $pdf = Pdf::loadView('persuratan.docpersetujuantindakan', $data);
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.persetujuantindakan.doc', $data);
         return $pdf->download('persetujuantindakan.pdf');
+    }
+
+    public function formberitakematian()
+    {
+        return view('persuratan.beritakematian.form', []);
+    }
+
+    public function docberitakematian(Request $request)
+    {
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.beritakematian.doc', $data);
+        return $pdf->download('beritakematian.pdf');
+    }
+
+    public function formrawatinap()
+    {
+        return view('persuratan.rawatinap.form', []);
+    }
+
+    public function docrawatinap(Request $request)
+    {
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.rawatinap.doc', $data);
+        return $pdf->download('rawatinap.pdf');
+    }
+
+    public function formtindakanoperasi()
+    {
+        return view('persuratan.tindakanoperasi.form', []);
+    }
+
+    public function doctindakanoperasi(Request $request)
+    {
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.tindakanoperasi.doc', $data);
+        return $pdf->download('tindakanoperasi.pdf');
+    }
+
+    public function formvaksinasi()
+    {
+        return view('persuratan.vaksinasi.form', []);
+    }
+
+    public function docvaksinasi(Request $request)
+    {
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.vaksinasi.doc', $data);
+        return $pdf->download('vaksinasi.pdf');
+    }
+
+    public function formrawatjalan()
+    {
+        return view('persuratan.rawatjalan.form', []);
+    }
+
+    public function docrawatjalan(Request $request)
+    {
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.rawatjalan.doc', $data);
+        return $pdf->download('rawatjalan.pdf');
+    }
+
+    public function formtitipsehat()
+    {
+        return view('persuratan.titipsehat.form', []);
+    }
+
+    public function doctitipsehat(Request $request)
+    {
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.titipsehat.doc', $data);
+        return $pdf->download('titipsehat.pdf');
+    }
+
+    public function formkelahiran()
+    {
+        return view('persuratan.kelahiran.form', []);
+    }
+
+    public function dockelahiran(Request $request)
+    {
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.kelahiran.doc', $data);
+        return $pdf->download('kelahiran.pdf');
+    }
+
+    public function formskkh()
+    {
+        return view('persuratan.skkh.form', []);
+    }
+
+    public function docskkh(Request $request)
+    {
+        $data = ['data' => $request, 'today' => Carbon::now()->format('d / m / Y')];
+        $pdf = Pdf::loadView('persuratan.skkh.doc', $data);
+        return $pdf->download('skkh.pdf');
     }
 }

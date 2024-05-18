@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
-            $table->string('image')->default('http://10.60.2.146:8000/storage/foto/img_profile.png');
+            $table->string('image')->default('http://192.168.255.214:8000/storage/foto/img_profile.png');
             $table->rememberToken();
             $table->timestamps();
         });

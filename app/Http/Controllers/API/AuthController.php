@@ -89,7 +89,7 @@ class AuthController extends Controller
     public function allUser()
     {
         return response([
-            'data' => User::orderBy('name', 'asc')->get()
+            'data' => User::where('role', '!=', 'admin')->orderBy('name', 'asc')->get()
         ], 200);
     }
 

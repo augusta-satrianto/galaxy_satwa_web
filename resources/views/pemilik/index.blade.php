@@ -77,4 +77,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById("searchInput").addEventListener("input", function() {
+            var searchValue = this.value.toLowerCase();
+            var rows = document.querySelectorAll("#tableBody tr");
+
+            rows.forEach(function(row) {
+                var nameCell = row.querySelector("td:nth-child(2)");
+                var nameText = nameCell.textContent.toLowerCase();
+                var nameMatch = nameText.includes(searchValue);
+
+                if (nameMatch) {
+                    row.style.display = "table-row";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+    </script>
 @endsection

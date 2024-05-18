@@ -35,7 +35,7 @@ Route::get('getHewan/{id}', function ($id) {
     $hewan = App\Models\Pet::where('user_id', $id)->get();
     return response()->json($hewan);
 });
-Route::group(['middleware' => 'verified'], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/', [DashboardController::class, 'index']);
 
     // Rekam Medis
@@ -51,7 +51,7 @@ Route::group(['middleware' => 'verified'], function () {
     Route::get('/jadwal', [AppointmentController::class, 'index']);
     Route::get('/jadwal/buat', [AppointmentController::class, 'create'])->middleware('admin');
     Route::post('/jadwal', [AppointmentController::class, 'store'])->middleware('admin');;
-    Route::put('/jadwal/batalkan/{appointment:id}', [AppointmentController::class, 'update'])->middleware('doctor');
+    Route::put('/jadwal/batalkan/{appointment:id}', [AppointmentController::class, 'update'])->middleware('admin');
 
     // Persuratan
     Route::get('/persuratan', [LetterController::class, 'index']);
@@ -66,6 +66,22 @@ Route::group(['middleware' => 'verified'], function () {
     Route::get('/persuratan/buat', [CorrespondenceController::class, 'send']);
     Route::get('/persuratan/buat/persetujuantindakan', [CorrespondenceController::class, 'formpersetujuantindakan']);
     Route::post('/persuratan/buat/persetujuantindakan', [CorrespondenceController::class, 'docpersetujuantindakan']);
+    Route::get('/persuratan/buat/beritakematian', [CorrespondenceController::class, 'formberitakematian']);
+    Route::post('/persuratan/buat/beritakematian', [CorrespondenceController::class, 'docberitakematian']);
+    Route::get('/persuratan/buat/rawatinap', [CorrespondenceController::class, 'formrawatinap']);
+    Route::post('/persuratan/buat/rawatinap', [CorrespondenceController::class, 'docrawatinap']);
+    Route::get('/persuratan/buat/tindakanoperasi', [CorrespondenceController::class, 'formtindakanoperasi']);
+    Route::post('/persuratan/buat/tindakanoperasi', [CorrespondenceController::class, 'doctindakanoperasi']);
+    Route::get('/persuratan/buat/vaksinasi', [CorrespondenceController::class, 'formvaksinasi']);
+    Route::post('/persuratan/buat/vaksinasi', [CorrespondenceController::class, 'docvaksinasi']);
+    Route::get('/persuratan/buat/rawatjalan', [CorrespondenceController::class, 'formrawatjalan']);
+    Route::post('/persuratan/buat/rawatjalan', [CorrespondenceController::class, 'docrawatjalan']);
+    Route::get('/persuratan/buat/titipsehat', [CorrespondenceController::class, 'formtitipsehat']);
+    Route::post('/persuratan/buat/titipsehat', [CorrespondenceController::class, 'doctitipsehat']);
+    Route::get('/persuratan/buat/kelahiran', [CorrespondenceController::class, 'formkelahiran']);
+    Route::post('/persuratan/buat/kelahiran', [CorrespondenceController::class, 'dockelahiran']);
+    Route::get('/persuratan/buat/skkh', [CorrespondenceController::class, 'formskkh']);
+    Route::post('/persuratan/buat/skkh', [CorrespondenceController::class, 'docskkh']);
 
     // Obat
     Route::get('/obat', [MedicineController::class, 'index']);

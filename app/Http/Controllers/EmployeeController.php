@@ -47,7 +47,7 @@ class EmployeeController extends Controller
             $validatedData['image'] = $request->file('image')->store('profile', 'public');
         }
 
-        $validatedData['image'] = 'http://10.60.2.146:8000/storage/' . $validatedData['image'];
+        $validatedData['image'] = 'http://192.168.255.214:8000/storage/' . $validatedData['image'];
         $date_of_birth = Carbon::createFromFormat('d/m/Y', $validatedData['date_of_birth'])->format('Y-m-d');
         $validatedData['date_of_birth'] = $date_of_birth;
         $validatedData['password'] = bcrypt($validatedData['password']);
@@ -87,7 +87,7 @@ class EmployeeController extends Controller
             if ($request->file('image')) {
                 $validatedData['image'] = $request->file('image')->store('profile', 'public');
             }
-            $validatedData['image'] = 'http://10.60.2.146:8000/storage/' . $validatedData['image'];
+            $validatedData['image'] = 'http://192.168.255.214:8000/storage/' . $validatedData['image'];
         }
 
         $date_of_birth = Carbon::createFromFormat('d/m/Y', $validatedData['date_of_birth'])->format('Y-m-d');

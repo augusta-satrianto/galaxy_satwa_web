@@ -95,8 +95,10 @@
                 <div class="Panel" style="width: 300px;">
                     <nav>
                         <ul class="Tabs">
-                            <li class="Tabs__tab active Tab"><a href="#" onclick="showContent(0)">Surat</a></li>
-                            <li class="Tabs__tab Tab"><a href="#" onclick="showContent(1)">Riwayat</a></li>
+                            <li class="Tabs__tab active Tab"><a href="#" onclick="showContent(0)"
+                                    style="font-family: 'Public Sans', sans-serif;">Surat</a></li>
+                            <li class="Tabs__tab Tab"><a href="#" onclick="showContent(1)"
+                                    style="font-family: 'Public Sans', sans-serif;">Riwayat</a></li>
                             <li class="Tabs__presentation-slider" role="presentation"></li>
                         </ul>
                     </nav>
