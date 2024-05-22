@@ -48,8 +48,6 @@
                         <div class="text-box">Logout</div>
                     </a>
                 </li>
-
-
             </ul>
         </div>
     </div>

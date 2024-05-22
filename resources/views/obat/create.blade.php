@@ -33,8 +33,7 @@
                             <label>Tanggal Kadaluarsa</label>
                             <div class="form-control-icon">
                                 <input id="expiry_date" name="expiry_date" class="form-control date-picker-calender"
-                                    type="text" placeholder="DD / MM / YY" onchange="formatDate(this)" required
-                                    autocomplete="off" />
+                                    type="text" placeholder="DD / MM / YY" required autocomplete="off" />
                                 <div class="icon-badge-2">
                                     <img src="../images/svg/calendar.svg" alt="" />
                                 </div>

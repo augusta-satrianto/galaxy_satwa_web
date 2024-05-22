@@ -29,7 +29,7 @@ class LoginController extends Controller
 
         // Jika pengguna ditemukan dan rolenya adalah 'pasien', maka tidak diizinkan untuk login
         if ($user && $user->role === 'pasien') {
-            return back()->with('loginError', 'Login failed!');
+            return back()->with('loginError', 'Email atau Password Salah');
         }
 
         // Melakukan otentikasi
@@ -38,7 +38,7 @@ class LoginController extends Controller
             return redirect()->intended('/');
         }
 
-        return back()->with('loginError', 'Login failed!');
+        return back()->with('loginError', 'Email atau Password Salah');
     }
 
 

@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="../../css/chartist.min.css" />
     <link rel="stylesheet" href="../../css/customfont.css" />
     <link rel="stylesheet" href="../../css/jquery-jvectormap-2.0.5.css" />
-    <link rel="stylesheet" href="../../css/jquery-ui.theme.min.css" />
     <link rel="stylesheet" href="../../css/metisMenu.min.css" />
     <link rel="stylesheet" href="../../css/select2.min.css" />
     <link rel="stylesheet" href="../../css/simplebar.css" />
@@ -61,14 +60,6 @@
     <script src="../../js/dragula.min.js"></script>
     <script src="../../js/appkanban.js"></script>
     <script src="../../js/app.js"></script>
-    <script>
-        function formatDate(input) {
-            const dateValue = input.value;
-            const parts = dateValue.split('/');
-            const formattedDate = parts[1] + '/' + parts[0] + '/' + parts[2];
-            input.value = formattedDate;
-        }
-    </script>
 </body>
 
 </html>

@@ -13,9 +13,6 @@ class MedicineController extends Controller
     public function index()
     {
         $medicines = Medicine::orderBy('name', 'asc');
-        if (request('obat')) {
-            $medicines->where('name', 'like', '%' . request('obat') . '%');
-        }
         return view('obat.index', [
             "title" => "Data Hewan",
             "active" => "hewan",

@@ -36,7 +36,7 @@
                                 <input id="expiry_date" name="expiry_date" class="form-control date-picker-calender"
                                     type="text" placeholder="DD / MM / YY"
                                     value="{{ old('expiry_date', date('d/m/Y', strtotime($medicine->expiry_date))) }}"
-                                    onchange="formatDate(this)" required autocomplete="off" />
+                                    required autocomplete="off" />
                                 <div class="icon-badge-2">
                                     <img src="../../images/svg/calendar.svg" alt="" />
                                 </div>

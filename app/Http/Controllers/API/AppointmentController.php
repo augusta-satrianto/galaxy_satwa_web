@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use Carbon\Carbon;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -32,6 +33,23 @@ class AppointmentController extends Controller
             'data' => Appointment::where('doctor_id', $doctor)->where('date', $date)->where('status', 'dibuat')->get()
         ], 200);
     }
+
+    public function willcome()
+    {
+        return response([
+            'data' => Appointment::where(function ($query) {
+                $query->where('patient_id', Auth::id())
+                    ->orWhere('doctor_id', Auth::id());
+            })
+                ->where('status', 'dibuat')
+                ->whereDate('date', '>=', Carbon::today())
+                ->with(['patient', 'doctor', 'pet'])
+                ->orderBy('date', 'asc')
+                ->get()
+        ], 200);
+    }
+
+
 
     //create
     public function store(Request $request)

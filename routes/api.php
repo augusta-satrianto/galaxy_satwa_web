@@ -11,6 +11,7 @@ use App\Http\Controllers\API\NotificationController;
 use App\Http\Controllers\API\MedicalRecordController;
 use App\Http\Controllers\API\CorrespondenceController;
 use App\Http\Controllers\API\ForgotPasswordController;
+use App\Http\Controllers\API\ScheduleController;
 use App\Models\Attendance;
 
 /*
@@ -38,7 +39,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/user/dokter', [AuthController::class, 'allUserDokter']); // all user doktor
     Route::post('/email/resend', [VerifyEmailController::class, 'resend']);
 
-
     // Pet
     Route::get('/pet', [PetController::class, 'index']); // all
     Route::get('/pet/count', [PetController::class, 'count']); // all
@@ -48,15 +48,17 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::put('/pet/{id}', [PetController::class, 'update']); // update
     Route::delete('/pet/{id}', [PetController::class, 'destroy']); // delete
 
-
     // Appointment
     Route::get('/appointment', [AppointmentController::class, 'index']); // all
     Route::get('/appointment/user', [AppointmentController::class, 'showByUserLogin']); // by user login
     Route::get('/appointment/notavailable/{doctor}/{date}', [AppointmentController::class, 'byDoctorDate']); // by user login
+    Route::get('/appointment/willcome', [AppointmentController::class, 'willcome']); // by user login
     Route::post('/appointment', [AppointmentController::class, 'store']); // create
     Route::put('/appointment/{id}', [AppointmentController::class, 'update']); // update
     Route::delete('/appointment/{id}', [AppointmentController::class, 'destroy']); // delete
 
+    // Schedule 
+    Route::get('/schedule', [ScheduleController::class, 'index']); // all
 
     // Medicine
     Route::get('/medicine', [MedicineController::class, 'index']); // all

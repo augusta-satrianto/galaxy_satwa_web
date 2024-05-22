@@ -14,7 +14,7 @@ class NotificationSeeder extends Seeder
     public function run(): void
     {
         Notification::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'date' => '2024-04-28',
             'time' => '09:00:00',
             'title' => 'Ini Judul',
@@ -23,7 +23,7 @@ class NotificationSeeder extends Seeder
         ]);
 
         Notification::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'date' => '2024-04-27',
             'time' => '08:00:00',
             'title' => 'Ini Judul',
@@ -31,7 +31,7 @@ class NotificationSeeder extends Seeder
             'is_read' => 1,
         ]);
         Notification::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'date' => '2024-04-27',
             'time' => '09:00:00',
             'title' => 'Ini Judul',
@@ -40,7 +40,7 @@ class NotificationSeeder extends Seeder
         ]);
 
         Notification::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'date' => '2024-04-15',
             'time' => '08:00:00',
             'title' => 'Ini Judul',
@@ -48,7 +48,7 @@ class NotificationSeeder extends Seeder
             'is_read' => 1,
         ]);
         Notification::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'date' => '2024-04-16',
             'time' => '09:00:00',
             'title' => 'Ini Judul',
@@ -57,7 +57,7 @@ class NotificationSeeder extends Seeder
         ]);
 
         Notification::create([
-            'user_id' => 1,
+            'user_id' => 2,
             'date' => '2024-04-15',
             'time' => '08:00:00',
             'title' => 'Ini Judul',

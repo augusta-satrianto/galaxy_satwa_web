@@ -85,19 +85,24 @@
                         </div>
                     </div>
                 </div>
-                <!-- Search & Add & Download -->
+
+                <!-- Unduh & Tambah -->
                 <section class="search">
                     <div class="row">
                         <div class="card-body">
-
                         </div>
                         @if (Auth::user()->role == 'dokter')
                             <div class="button" style="width:150px;">
                                 <a href="/rekammedis/{{ $pet['id'] }}/buat">
-                                    <div class="tambah">+ Tambah</div>
+                                    <div class="tambah">Tambah</div>
                                 </a>
                             </div>
                         @endif
+                        <div class="button" style="width:150px;margin:0;padding:0;padding-left:10px;">
+                            <a href="/rekammedis/{{ $pet['id'] }}/unduh">
+                                <div class="edit">Unduh</div>
+                            </a>
+                        </div>
                     </div>
                 </section>
 

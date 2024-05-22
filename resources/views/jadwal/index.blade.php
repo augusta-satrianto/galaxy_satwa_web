@@ -123,6 +123,99 @@
                 <div id="content0" class="content active">
                     <section class="cards">
                         <div class="row">
+                            @foreach ($hariini2 as $schedule)
+                                <div class="col-xxxl-4 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="card jadwal" style="padding: 20px;">
+                                        <div class="row">
+                                            @if ($schedule->category == 'Vaksinasi')
+                                                <div class="image"
+                                                    style=" background-image: url('../images/img_vaksinasi.svg');">
+                                                </div>
+                                            @else
+                                                <div class="image"
+                                                    style=" background-image: url('../images/img_imunisasi.svg');">
+                                                </div>
+                                            @endif
+
+                                            <div class="profile" style="">
+                                                <div class="row profile-data" style="padding:0;">
+                                                    <p class="title">Tanggal</p>
+                                                    <p class="space"> : </p>
+                                                    <p class="value">
+                                                        {{ str_replace(
+                                                            [
+                                                                'Monday',
+                                                                'Tuesday',
+                                                                'Wednesday',
+                                                                'Thursday',
+                                                                'Friday',
+                                                                'Saturday',
+                                                                'Sunday',
+                                                                'January',
+                                                                'February',
+                                                                'March',
+                                                                'April',
+                                                                'May',
+                                                                'June',
+                                                                'July',
+                                                                'August',
+                                                                'September',
+                                                                'October',
+                                                                'November',
+                                                                'December',
+                                                            ],
+                                                            [
+                                                                'Senin',
+                                                                'Selasa',
+                                                                'Rabu',
+                                                                'Kamis',
+                                                                'Jumat',
+                                                                'Sabtu',
+                                                                'Minggu',
+                                                                'Januari',
+                                                                'Februari',
+                                                                'Maret',
+                                                                'April',
+                                                                'Mei',
+                                                                'Juni',
+                                                                'Juli',
+                                                                'Agustus',
+                                                                'September',
+                                                                'Oktober',
+                                                                'November',
+                                                                'Desember',
+                                                            ],
+                                                            date('l, j F Y', strtotime($schedule->date)),
+                                                        ) }}
+                                                    </p>
+                                                </div>
+                                                <div class="row profile-data" style="padding:0;">
+                                                    <p class="title">Agenda</p>
+                                                    <p class="space"> : </p>
+                                                    <p class="value">
+                                                        {{ $schedule->category }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            @if (Auth::user()->role == 'admin')
+                                                <div class="con-button">
+                                                    <form action="/vaksinimun/batalkan/{{ $schedule->id }}" method="post"
+                                                        class="d-inline" enctype="multipart/form-data">
+                                                        @method('put')
+                                                        @csrf
+                                                        <button type="submit"
+                                                            onclick="return confirm('Apakah Anda yakin ingin membatalkan jadwal?')">
+                                                            <div class="button">
+                                                                Batalkan
+                                                            </div>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                             @foreach ($hariini as $appointment)
                                 <div class="col-xxxl-4 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
                                     <div class="card jadwal" style="padding: 20px;">
@@ -238,6 +331,100 @@
                 <div id="content1" class="content" style="display:none;">
                     <section class="cards">
                         <div class="row">
+                            @foreach ($mendatang2 as $schedule)
+                                <div class="col-xxxl-4 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="card jadwal" style="padding: 20px;">
+                                        <div class="row">
+                                            @if ($schedule->category == 'Vaksinasi')
+                                                <div class="image"
+                                                    style=" background-image: url('../images/img_vaksinasi.svg');">
+                                                </div>
+                                            @else
+                                                <div class="image"
+                                                    style=" background-image: url('../images/img_imunisasi.svg');">
+                                                </div>
+                                            @endif
+
+                                            <div class="profile" style="">
+                                                <div class="row profile-data" style="padding:0;">
+                                                    <p class="title">Tanggal</p>
+                                                    <p class="space"> : </p>
+                                                    <p class="value">
+                                                        {{ str_replace(
+                                                            [
+                                                                'Monday',
+                                                                'Tuesday',
+                                                                'Wednesday',
+                                                                'Thursday',
+                                                                'Friday',
+                                                                'Saturday',
+                                                                'Sunday',
+                                                                'January',
+                                                                'February',
+                                                                'March',
+                                                                'April',
+                                                                'May',
+                                                                'June',
+                                                                'July',
+                                                                'August',
+                                                                'September',
+                                                                'October',
+                                                                'November',
+                                                                'December',
+                                                            ],
+                                                            [
+                                                                'Senin',
+                                                                'Selasa',
+                                                                'Rabu',
+                                                                'Kamis',
+                                                                'Jumat',
+                                                                'Sabtu',
+                                                                'Minggu',
+                                                                'Januari',
+                                                                'Februari',
+                                                                'Maret',
+                                                                'April',
+                                                                'Mei',
+                                                                'Juni',
+                                                                'Juli',
+                                                                'Agustus',
+                                                                'September',
+                                                                'Oktober',
+                                                                'November',
+                                                                'Desember',
+                                                            ],
+                                                            date('l, j F Y', strtotime($schedule->date)),
+                                                        ) }}
+                                                    </p>
+                                                </div>
+                                                <div class="row profile-data" style="padding:0;">
+                                                    <p class="title">Agenda</p>
+                                                    <p class="space"> : </p>
+                                                    <p class="value">
+                                                        {{ $schedule->category }}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            @if (Auth::user()->role == 'admin')
+                                                <div class="con-button">
+                                                    <form action="/vaksinimun/batalkan/{{ $schedule->id }}"
+                                                        method="post" class="d-inline" enctype="multipart/form-data">
+                                                        @method('put')
+                                                        @csrf
+                                                        <button type="submit"
+                                                            onclick="return confirm('Apakah Anda yakin ingin membatalkan jadwal?')">
+                                                            <div class="button">
+                                                                Batalkan
+                                                            </div>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                             @foreach ($mendatang as $appointment)
                                 <div class="col-xxxl-4 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
                                     <div class="card jadwal" style="padding: 20px;">
@@ -327,9 +514,25 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @if (Auth::user()->role == 'admin')
+                                            <div class="con-button">
+                                                <form action="/jadwal/batalkan/{{ $appointment->id }}" method="post"
+                                                    class="d-inline" enctype="multipart/form-data">
+                                                    @method('put')
+                                                    @csrf
+                                                    <button type="submit"
+                                                        onclick="return confirm('Apakah Anda yakin ingin membatalkan janji?')">
+                                                        <div class="button">
+                                                            Batalkan Janji
+                                                        </div>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             @endforeach
+
                         </div>
                     </section>
                 </div>
@@ -337,6 +540,84 @@
                 <div id="content2" class="content" style="display:none;">
                     <section class="cards">
                         <div class="row">
+                            @foreach ($selesai2 as $schedule)
+                                <div class="col-xxxl-4 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="card jadwal" style="padding: 20px;">
+                                        <div class="row">
+                                            @if ($schedule->category == 'Vaksinasi')
+                                                <div class="image"
+                                                    style=" background-image: url('../images/img_vaksinasi.svg');">
+                                                </div>
+                                            @else
+                                                <div class="image"
+                                                    style=" background-image: url('../images/img_imunisasi.svg');">
+                                                </div>
+                                            @endif
+
+                                            <div class="profile" style="">
+                                                <div class="row profile-data" style="padding:0;">
+                                                    <p class="title">Tanggal</p>
+                                                    <p class="space"> : </p>
+                                                    <p class="value">
+                                                        {{ str_replace(
+                                                            [
+                                                                'Monday',
+                                                                'Tuesday',
+                                                                'Wednesday',
+                                                                'Thursday',
+                                                                'Friday',
+                                                                'Saturday',
+                                                                'Sunday',
+                                                                'January',
+                                                                'February',
+                                                                'March',
+                                                                'April',
+                                                                'May',
+                                                                'June',
+                                                                'July',
+                                                                'August',
+                                                                'September',
+                                                                'October',
+                                                                'November',
+                                                                'December',
+                                                            ],
+                                                            [
+                                                                'Senin',
+                                                                'Selasa',
+                                                                'Rabu',
+                                                                'Kamis',
+                                                                'Jumat',
+                                                                'Sabtu',
+                                                                'Minggu',
+                                                                'Januari',
+                                                                'Februari',
+                                                                'Maret',
+                                                                'April',
+                                                                'Mei',
+                                                                'Juni',
+                                                                'Juli',
+                                                                'Agustus',
+                                                                'September',
+                                                                'Oktober',
+                                                                'November',
+                                                                'Desember',
+                                                            ],
+                                                            date('l, j F Y', strtotime($schedule->date)),
+                                                        ) }}
+                                                    </p>
+                                                </div>
+                                                <div class="row profile-data" style="padding:0;">
+                                                    <p class="title">Agenda</p>
+                                                    <p class="space"> : </p>
+                                                    <p class="value">
+                                                        {{ $schedule->category }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                             @foreach ($selesai as $appointment)
                                 <div class="col-xxxl-4 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
                                     <div class="card jadwal" style="padding: 20px;">
@@ -436,6 +717,84 @@
                 <div id="content3" class="content" style="display:none;">
                     <section class="cards">
                         <div class="row">
+                            @foreach ($dibatalkan2 as $schedule)
+                                <div class="col-xxxl-4 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="card jadwal" style="padding: 20px;">
+                                        <div class="row">
+                                            @if ($schedule->category == 'Vaksinasi')
+                                                <div class="image"
+                                                    style=" background-image: url('../images/img_vaksinasi.svg');">
+                                                </div>
+                                            @else
+                                                <div class="image"
+                                                    style=" background-image: url('../images/img_imunisasi.svg');">
+                                                </div>
+                                            @endif
+
+                                            <div class="profile" style="">
+                                                <div class="row profile-data" style="padding:0;">
+                                                    <p class="title">Tanggal</p>
+                                                    <p class="space"> : </p>
+                                                    <p class="value">
+                                                        {{ str_replace(
+                                                            [
+                                                                'Monday',
+                                                                'Tuesday',
+                                                                'Wednesday',
+                                                                'Thursday',
+                                                                'Friday',
+                                                                'Saturday',
+                                                                'Sunday',
+                                                                'January',
+                                                                'February',
+                                                                'March',
+                                                                'April',
+                                                                'May',
+                                                                'June',
+                                                                'July',
+                                                                'August',
+                                                                'September',
+                                                                'October',
+                                                                'November',
+                                                                'December',
+                                                            ],
+                                                            [
+                                                                'Senin',
+                                                                'Selasa',
+                                                                'Rabu',
+                                                                'Kamis',
+                                                                'Jumat',
+                                                                'Sabtu',
+                                                                'Minggu',
+                                                                'Januari',
+                                                                'Februari',
+                                                                'Maret',
+                                                                'April',
+                                                                'Mei',
+                                                                'Juni',
+                                                                'Juli',
+                                                                'Agustus',
+                                                                'September',
+                                                                'Oktober',
+                                                                'November',
+                                                                'Desember',
+                                                            ],
+                                                            date('l, j F Y', strtotime($schedule->date)),
+                                                        ) }}
+                                                    </p>
+                                                </div>
+                                                <div class="row profile-data" style="padding:0;">
+                                                    <p class="title">Agenda</p>
+                                                    <p class="space"> : </p>
+                                                    <p class="value">
+                                                        {{ $schedule->category }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                             @foreach ($dibatalkan as $appointment)
                                 <div class="col-xxxl-4 col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-6">
                                     <div class="card jadwal" style="padding: 20px;">

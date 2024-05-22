@@ -115,6 +115,7 @@
 
     <script>
         document.getElementById("searchInput").addEventListener("input", function() {
+
             var searchValue = this.value.toLowerCase();
             var rows = document.querySelectorAll("#tableBody tr");
 

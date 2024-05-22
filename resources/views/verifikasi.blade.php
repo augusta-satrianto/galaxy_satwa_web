@@ -45,7 +45,7 @@
 <body>
     <div class="container">
         <div class="message">
-            Your email has been successfully verified.
+            {{ $text }}
         </div>
     </div>
 </body>

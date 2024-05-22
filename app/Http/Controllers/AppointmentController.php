@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Pet;
 use App\Models\User;
 use App\Models\Appointment;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -19,6 +20,11 @@ class AppointmentController extends Controller
             "mendatang" => Appointment::where('status', 'dibuat')->whereDate('date', '>', Carbon::today())->orderBy('date', 'asc')->get(),
             "selesai" => Appointment::where('status', 'dibuat')->whereDate('date', '<', Carbon::today())->orderBy('date', 'asc')->get(),
             "dibatalkan" => Appointment::where('status', 'dibatalkan')->orderBy('date', 'asc')->get(),
+            "hariini2" => Schedule::where('status', 'dibuat')->whereDate('date', Carbon::today())->orderBy('date', 'asc')->get(),
+            "mendatang2" => Schedule::where('status', 'dibuat')->whereDate('date', '>', Carbon::today())->orderBy('date', 'asc')->get(),
+            "selesai2" => Schedule::where('status', 'dibuat')->whereDate('date', '<', Carbon::today())->orderBy('date', 'asc')->get(),
+            "dibatalkan2" => Schedule::where('status', 'dibatalkan')->orderBy('date', 'asc')->get(),
+
         ]);
     }
 
@@ -34,7 +40,6 @@ class AppointmentController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
         $validatedData = $request->validate([
             'patient_id' => 'required|max:255',
             'doctor_id' => 'required|max:255',

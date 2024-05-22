@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\MedicalRecordController;
 use App\Http\Controllers\CorrespondenceController;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ use App\Http\Controllers\CorrespondenceController;
 */
 
 Route::get('/verifikasiberhasil', [DashboardController::class, 'verifikasi']);
+Route::get('/perbaruipasswordberhasil', [DashboardController::class, 'resetpassword']);
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login']);
@@ -50,15 +52,17 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     // Jadwal
     Route::get('/jadwal', [AppointmentController::class, 'index']);
     Route::get('/jadwal/buat', [AppointmentController::class, 'create'])->middleware('admin');
-    Route::post('/jadwal', [AppointmentController::class, 'store'])->middleware('admin');;
+    Route::post('/jadwal', [AppointmentController::class, 'store'])->middleware('admin');
+    Route::post('/vaksinasi', [ScheduleController::class, 'storevaksin'])->middleware('admin');;
+    Route::post('/imunisasi', [ScheduleController::class, 'storeimun'])->middleware('admin');;
     Route::put('/jadwal/batalkan/{appointment:id}', [AppointmentController::class, 'update'])->middleware('admin');
+    Route::put('/vaksinimun/batalkan/{schedule:id}', [ScheduleController::class, 'update'])->middleware('admin');
 
     // Persuratan
     Route::get('/persuratan', [LetterController::class, 'index']);
     Route::get('/persuratan/kirim', [LetterController::class, 'create']);
     Route::post('/persuratan/kirim', [LetterController::class, 'store']);
-    Route::get('/persuratan/pdf', [CorrespondenceController::class, 'view_pdf']);
-    Route::get('/persuratan/generate/pdf', [CorrespondenceController::class, 'generate_pdf']);
+    Route::get('/rekammedis/{pet:id}/unduh', [CorrespondenceController::class, 'rekam_medis']); //Rekam Medis
     Route::get('/obat/unduh', [CorrespondenceController::class, 'data_obat']); //Obat
     Route::get('/hewan/unduh', [CorrespondenceController::class, 'data_hewan']); //Hewan
     Route::get('/pemilik/unduh', [CorrespondenceController::class, 'data_pemilik']); //Pemilik

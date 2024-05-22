@@ -81,7 +81,7 @@
                             <label>Tanggal Lahir</label>
                             <div class="form-control-icon">
                                 <input id="date_of_birth" name="date_of_birth" class="form-control date-picker-calender"
-                                    type="text" placeholder="DD / MM / YYYY" onchange="formatDate(this)"
+                                    type="text" placeholder="DD / MM / YYYY"
                                     value="{{ Carbon\Carbon::parse($employee->date_of_birth)->format('d/m/Y') }}" required
                                     autocomplete="off" />
 
@@ -132,8 +132,8 @@
                         <div class="mb-3">
                             <label for="image" class="form-label">Foto</label>
                             <img class="img-preview img-fluid mb-3 col-sm-5">
-                            <input class="form-control @error('image') is-invalid @enderror" type="file"
-                                id="image" name="image" onchange="previewImage()" accept="image/*">
+                            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
+                                name="image" onchange="previewImage()" accept="image/*">
                             @error('image')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

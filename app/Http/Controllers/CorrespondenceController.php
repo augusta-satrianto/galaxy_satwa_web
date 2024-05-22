@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MedicalRecord;
 use Carbon\Carbon;
 use App\Models\Pet;
 use App\Models\User;
@@ -11,19 +12,13 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class CorrespondenceController extends Controller
 {
-
-
-    public function view_pdf()
+    public function rekam_medis(Pet $pet)
     {
-        return view('persuratan.coba');
-    }
 
-    public function generate_pdf()
-    {
-        $order = Pet::all();
-        $data = ['order' => $order];
-        $pdf = Pdf::loadView('persuratan.coba', $data);
-        return $pdf->download('invoice.pdf');
+        $medicalrecords = MedicalRecord::where('pet_id', $pet->id)->get();
+        $data = ['pet' => $pet, 'medicalrecords' => $medicalrecords];
+        $pdf = Pdf::loadView('rekammedis.doc', $data);
+        return $pdf->download('rekam_medis.pdf');
     }
 
     public function data_obat()

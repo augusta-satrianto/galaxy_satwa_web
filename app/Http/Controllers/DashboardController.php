@@ -27,6 +27,15 @@ class DashboardController extends Controller
 
     public function verifikasi()
     {
-        return view('verifikasi', []);
+        return view('verifikasi', [
+            'text' => 'Email Anda Berhasil Diverifikasi'
+        ]);
+    }
+
+    public function resetpassword()
+    {
+        return view('verifikasi', [
+            'text' => 'Kata Sandi Berhasil Diperbarui'
+        ]);
     }
 }

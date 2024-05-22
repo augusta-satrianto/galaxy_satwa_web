@@ -10,13 +10,11 @@
                         <div class="card-body">
                             <div class="fromGroup has-icon">
                                 <div class="form-control-icon">
-                                    <form action="/pemilik">
-                                        <input class="form-control" type="search" placeholder="Search" name="pemilik"
-                                            value="{{ request('pemilik') }}">
-                                        <div class="icon-badge-2">
-                                            <img src="../images/svg/search2.svg" alt="">
-                                        </div>
-                                    </form>
+                                    <input class="form-control" type="search" placeholder="Search"id="searchInput"
+                                        autocomplete="off">
+                                    <div class="icon-badge-2">
+                                        <img src="../images/svg/search2.svg" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +44,7 @@
                                                 <th scope="col">No.Tlpn</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tableBody">
                                             @foreach ($patients as $patient)
                                                 <tr>
                                                     <th scope="row">

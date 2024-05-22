@@ -71,8 +71,8 @@
                             <label>Tanggal Lahir</label>
                             <div class="form-control-icon">
                                 <input id="date_of_birth" name="date_of_birth" class="form-control date-picker-calender"
-                                    type="text" placeholder="DD / MM / YY" onchange="formatDate(this)" required
-                                    autocomplete="off" value="{{ old('date_of_birth') }}" />
+                                    type="text" placeholder="DD / MM / YY" required autocomplete="off"
+                                    value="{{ old('date_of_birth') }}" />
                                 <div class="icon-badge-2">
                                     <img src="../images/svg/calendar.svg" alt="" />
                                 </div>

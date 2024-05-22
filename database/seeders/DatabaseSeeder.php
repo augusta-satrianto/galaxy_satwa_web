@@ -6,6 +6,8 @@ namespace Database\Seeders;
 use Database\Seeders\PetSeeder;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
+use Database\Seeders\ScheduleSeeder;
+use Database\Seeders\AppointmentSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MedicineSeeder::class);
         $this->call(NotificationSeeder::class);
         $this->call(PetSeeder::class);
+        $this->call(ScheduleSeeder::class);
         $this->call(UserSeeder::class);
     }
 }

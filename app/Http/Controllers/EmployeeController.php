@@ -11,9 +11,6 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees =  User::where('role', 'dokter')->orWhere('role', 'paramedis')->orderBy('name', 'asc');
-        if (request('karyawan')) {
-            $employees->where('name', 'like', '%' . request('karyawan') . '%');
-        }
         return view('karyawan.index', [
             "title" => "Data Pemilik",
             "active" => "karyawan",

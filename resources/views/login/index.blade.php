@@ -1,57 +1,11 @@
-{{-- @extends('layouts.main')
-
-@section('container')
-    <div class="row justify-content-center">
-        <div class="col-lg-5">
-            <main class="form-signin w-100 m-auto">
-                @if (session()->has('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-                    </div>
-                @endif
-                @if (session()->has('loginError'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ session('loginError') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-                    </div>
-                @endif
-                <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
-                <form action="/login" method="post">
-                    @csrf
-                    <div class="form-floating">
-                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror "
-                            id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
-                        <label for="floatingInput">Email address</label>
-                        @error('email')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-                    <div class="form-floating">
-                        <input type="password" name="password" class="form-control" id="password" placeholder="Password"
-                            required>
-                        <label for="floatingPassword">Password</label>
-                    </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-                </form>
-                <small class="d-block text-center">Not registered? <a href="/register">register Now!</a></small>
-            </main>
-        </div>
-    </div>
-@endsection --}}
-
-
-
 <!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form | CodingLab</title>
+    <title>Galaxy Satwa</title>
+    <link rel="icon" type="image/png" href="../../images/logo/logo-icon.svg" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 
@@ -191,30 +145,20 @@
 <body>
     <div class="container">
         <div class="wrapper">
-            <div class="title"><span>Login Form</span></div>
-            @if (session()->has('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-                </div>
-            @endif
-            @if (session()->has('loginError'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('loginError') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-                </div>
-            @endif
+            <div class="title"><span>Silahkan Login</span></div>
+
             <form action="/login" method="post">
                 @csrf
+                @if (session()->has('loginError'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('loginError') }}
+                    </div>
+                @endif
                 <div class="row">
                     <i class="fas fa-user"></i>
                     <input type="email" name="email" class="form-control @error('email') is-invalid @enderror "
                         id="email" placeholder="Email" autofocus required value="{{ old('email') }}">
-                    @error('email')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
+
                 </div>
                 <div class="row">
                     <i class="fas fa-lock"></i>

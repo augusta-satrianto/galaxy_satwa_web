@@ -14,7 +14,7 @@ class AppointmentSeeder extends Seeder
     public function run(): void
     {
         Appointment::create([
-            'patient_id' => 1,
+            'patient_id' => 2,
             'doctor_id' => 4,
             'pet_id' => 1,
             'date' => '2024-05-17',
@@ -23,7 +23,7 @@ class AppointmentSeeder extends Seeder
         ]);
 
         Appointment::create([
-            'patient_id' => 1,
+            'patient_id' => 2,
             'doctor_id' => 5,
             'pet_id' => 2,
             'date' => '2024-04-18',
