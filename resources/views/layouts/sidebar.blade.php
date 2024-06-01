@@ -42,8 +42,8 @@
                 <form id="logout-form" action="/logout" method="POST" style="display: none;">
                     @csrf
                 </form>
-                <li onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <a aria-expanded="false" class="waves-effect primary-light">
+                <li onclick="event.preventDefault(); confirmLogout();">
+                    <a id="nonactive" aria-expanded="false" class="waves-effect primary-light">
                         <span class="icon-box"><i class="ph-sign-out"></i></span>
                         <div class="text-box">Logout</div>
                     </a>
@@ -52,3 +52,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    function confirmLogout() {
+        if (confirm('Apakah anda yakin ingin keluar?')) {
+            document.getElementById('logout-form').submit();
+        }
+    }
+</script>

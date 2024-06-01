@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Pet;
 use App\Models\User;
 use App\Models\Appointment;
+use App\Models\Notification;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 
@@ -51,8 +52,20 @@ class AppointmentController extends Controller
         $date = Carbon::createFromFormat('d/m/Y', $validatedData['date'])->format('Y-m-d');
         $validatedData['date'] = $date;
         $validatedData['pet_id'] = intval($validatedData['hewan']);
-
         Appointment::create($validatedData);
+
+        // Notif Dokter
+        $validatedNotifD['user_id'] = $validatedData['doctor_id'];
+        $validatedNotifD['title'] = "Pemberitahuan";
+        $validatedNotifD['description'] = 'Ada jadwal janji temu pada ' . $validatedData['date'] . $validatedData['time'];
+        Notification::create($validatedNotifD);
+
+        // Notif Pasien
+        $validatedNotifP['user_id'] = $validatedData['patient_id'];
+        $validatedNotifP['title'] = "Pemberitahuan";
+        $validatedNotifP['description'] = 'Ada jadwal janji temu pada ' . $validatedData['date'] . $validatedData['time'];
+        Notification::create($validatedNotifP);
+
         return redirect('/jadwal')->with('success', 'Berhasil membuat janji temu');
     }
 
@@ -62,6 +75,18 @@ class AppointmentController extends Controller
         $validatedData['status'] = 'dibatalkan';
 
         Appointment::where('id', $appointment->id)->update($validatedData);
+
+        // Notif Dokter
+        $validatedNotifD['user_id'] = $appointment->doctor_id;
+        $validatedNotifD['title'] = "Pemberitahuan";
+        $validatedNotifD['description'] = 'Jadwal janji temu pada ' . $validatedData['date'] . $validatedData['time'] . ' dibatalkan';
+        Notification::create($validatedNotifD);
+
+        // Notif Pasien
+        $validatedNotifP['user_id'] = $appointment->patient_id;
+        $validatedNotifP['title'] = "Pemberitahuan";
+        $validatedNotifP['description'] = 'Jadwal janji temu pada ' . $validatedData['date'] . $validatedData['time'] . 'dibatalkan karena dokter memiliki kepentingan mendesak';
+        Notification::create($validatedNotifP);
         return redirect('/jadwal')->with('success', 'Berhasil membatalkan janji temu');
     }
 }

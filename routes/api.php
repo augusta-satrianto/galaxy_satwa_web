@@ -65,6 +65,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     // Medical Record
     Route::get('/medicalrecord/pet/{id}', [MedicalRecordController::class, 'show']); // all by pet id
+    Route::post('/medicalrecord', [MedicalRecordController::class, 'store']); // create
+    Route::put('/medicalrecord/{id}', [MedicalRecordController::class, 'update']); // update
+    Route::delete('/medicalrecord/{id}', [MedicalRecordController::class, 'destroy']); // delete
 
     // Attendance
     Route::get('/attendance/user', [AttendanceController::class, 'showByUserLogin']); // all by  user login

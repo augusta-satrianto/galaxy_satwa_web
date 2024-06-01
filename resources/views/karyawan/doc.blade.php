@@ -47,7 +47,7 @@
 </head>
 
 <body>
-    <div class="judul">DATA PEMILIK</div><br>
+    <div class="judul">DATA KARYAWAN</div><br>
 
     <table>
         <thead>

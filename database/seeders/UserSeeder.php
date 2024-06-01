@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'gender' => 'Perempuan',
             'address' => 'Wiyung',
             'phone' => '087654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
 
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
             'gender' => 'Perempuan',
             'address' => 'Wiyung',
             'phone' => '087654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
 
@@ -48,7 +48,7 @@ class UserSeeder extends Seeder
             'gender' => 'Laki-laki',
             'address' => 'Ketintang',
             'phone' => '085654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
 
@@ -61,7 +61,7 @@ class UserSeeder extends Seeder
             'gender' => 'Perempuan',
             'address' => 'Lidah Wetan',
             'phone' => '085654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
 
@@ -75,7 +75,7 @@ class UserSeeder extends Seeder
             'gender' => 'Laki-laki',
             'address' => 'Sidoarjo',
             'phone' => '088654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
 
@@ -89,7 +89,7 @@ class UserSeeder extends Seeder
             'gender' => 'Laki-laki',
             'address' => 'Jakarta',
             'phone' => '088654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
 
@@ -103,7 +103,7 @@ class UserSeeder extends Seeder
             'gender' => 'Laki-laki',
             'address' => 'Jakarta',
             'phone' => '088654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
 
@@ -116,7 +116,7 @@ class UserSeeder extends Seeder
             'gender' => 'Perempuan',
             'address' => 'Jombang',
             'phone' => '081654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
 
@@ -129,7 +129,7 @@ class UserSeeder extends Seeder
             'gender' => 'Perempuan',
             'address' => 'Jombang',
             'phone' => '081654367531',
-            'image' => 'http://192.168.255.214:8000/storage/foto/img_profile.png',
+            'image' => 'http://192.168.113.214:8000/storage/foto/img_profile.png',
             'email_verified_at' => '2024-01-10',
         ]);
     }

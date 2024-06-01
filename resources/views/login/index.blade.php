@@ -31,7 +31,7 @@
         .container {
             max-width: 440px;
             padding: 0 20px;
-            margin: 170px auto;
+            margin: 100px auto;
         }
 
         .wrapper {

@@ -36,7 +36,8 @@
                                 <label>Tanggal</label>
                                 <div class="form-control-icon">
                                     <input id="datej" name="date" class="form-control date-picker-calender"
-                                        type="text" placeholder="DD / MM / YY" required autocomplete="off" />
+                                        type="text" placeholder="DD / MM / YY" required autocomplete="off"
+                                        onchange="tanggalChanged(this.value)" />
                                     <div class="icon-badge-2">
                                         <img src="../images/svg/calendar.svg" alt="" />
                                     </div>
@@ -125,6 +126,23 @@
             </div>
         </div>
     </div>
+    <script>
+        function tanggalChanged(newValue) {
+            console.log(newValue);
+            var parts = newValue.split('/');
+            var inputDate = new Date(parts[2], parts[1] - 1, parts[0]); // Note: months are 0-indexed in JavaScript
+
+            // Get today's date
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Compare the input date with today's date
+            if (inputDate <= today) {
+                alert("Tanggal harus diatas tanggal hari ini");
+                document.getElementById('datej').value = null;
+            }
+        }
+    </script>
     <script>
         document.getElementById('catSelect').addEventListener('change', function() {
             var cat = this.value;
