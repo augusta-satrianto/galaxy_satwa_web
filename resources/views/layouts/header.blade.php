@@ -42,7 +42,7 @@
                         <li>
                             <div>
                                 <img style="width: 40px;height:40px;border-radius:50%;" src="{{ Auth::user()->image }}"
-                                    alt="Gambar Hewan Peliharaan">
+                                    alt="Gambar Pengguna">
                             </div>
 
                         </li>

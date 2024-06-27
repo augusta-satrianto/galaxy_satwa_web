@@ -150,9 +150,12 @@
             <form action="/login" method="post">
                 @csrf
                 @if (session()->has('loginError'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <div
+                        style="border: solid 1px #B15553;border-radius:4px;padding:5px 10px;background-color:#f2dede;color:#b15553;font-size:14px;">
                         {{ session('loginError') }}
+
                     </div>
+                    <br>
                 @endif
                 <div class="row">
                     <i class="fas fa-user"></i>

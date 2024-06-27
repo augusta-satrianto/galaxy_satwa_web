@@ -41,7 +41,6 @@ class AuthController extends Controller
         } catch (ValidationException $validationException) {
             return $this->sendValidationErrorResponse($validationException);
         } catch (\Exception $e) {
-            // Tangani kesalahan umum
             return $this->sendErrorResponse('Registration failed. Please try again.', 500);
         }
     }
@@ -49,20 +48,21 @@ class AuthController extends Controller
     //Login user
     public function login(Request $request)
     {
-
-        //Validate fields
         $attrs = $request->validate([
             'email' => 'required',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
-        //Attmpt login
         if (!Auth::attempt($attrs)) {
-            # code...
             return response([
                 'message' => 'Invalid credentials.'
             ]);
         }
+
+        User::where('device', $request->device)->where('id', '!=', Auth::id())->update(['device' => null]);
+        auth()->user()->update([
+            'device' => $request->device,
+        ]);
 
         return response([
             'meta' => [

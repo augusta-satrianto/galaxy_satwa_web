@@ -38,7 +38,7 @@ class LetterController extends Controller
             $validatedData['file'] = $request->file('file')->store('correspondence', 'public');
         }
 
-        $validatedData['file'] = 'http://192.168.113.214:8000/storage/' . $validatedData['file'];
+        $validatedData['file'] = 'http://galaxysatwa.my.id/storage/' . $validatedData['file'];
         $validatedData['doctor_id'] = Auth::user()->id;
 
 
