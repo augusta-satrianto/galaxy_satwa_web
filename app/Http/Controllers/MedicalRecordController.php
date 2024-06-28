@@ -11,15 +11,10 @@ class MedicalRecordController extends Controller
 {
     public function index()
     {
-        $pets = Pet::orderBy('name', 'asc');
-        if (request('hewan')) {
-            $pets->where('name', 'like', '%' . request('hewan') . '%');
-        }
-
         return view('rekammedis.index', [
             "title" => "Rekam Medis",
             "active" => "rekammedis",
-            "pets" => $pets->simplePaginate(10),
+            "pets" => Pet::orderBy('name', 'asc')->simplePaginate(10),
         ]);
     }
 

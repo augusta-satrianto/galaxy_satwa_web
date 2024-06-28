@@ -24,15 +24,11 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        // Mendapatkan pengguna berdasarkan email
         $user = User::where('email', $credentials['email'])->first();
-
-        // Jika pengguna ditemukan dan rolenya adalah 'pasien', maka tidak diizinkan untuk login
         if ($user && $user->role === 'pasien') {
             return back()->with('loginError', 'Email atau Password Salah');
         }
 
-        // Melakukan otentikasi
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/');

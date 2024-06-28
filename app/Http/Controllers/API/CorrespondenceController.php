@@ -17,7 +17,6 @@ class CorrespondenceController extends Controller
             ->orWhere('doctor_id', Auth::id())
             ->get();
 
-        // Ubah format waktu sesuai dengan zona waktu yang diinginkan
         $correspondences->transform(function ($correspondence) {
             $correspondence->created_at = Carbon::parse($correspondence->created_at)
                 ->setTimezone('Asia/Jakarta')

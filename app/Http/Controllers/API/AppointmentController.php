@@ -82,7 +82,7 @@ class AppointmentController extends Controller
 
         if (!$appointment) {
             return response([
-                'message' => 'Post not found.'
+                'message' => 'Appointment not found.'
             ], 403);
         }
 
@@ -96,7 +96,7 @@ class AppointmentController extends Controller
         ]);
 
         return response([
-            'message' => 'Post updated.',
+            'message' => 'Appointment updated.',
             'data' => $appointment
         ], 200);
     }
